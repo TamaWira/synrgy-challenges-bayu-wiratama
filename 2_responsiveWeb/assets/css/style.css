@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Inter';
+    font-weight: 700;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    margin-bottom: 2rem;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    margin-block: 1rem;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+/* Hero */
+
+.hero {
+    background-color: #F1F3FF;
+    margin-block-end: 3rem;
+    height: auto;
+}
+
+.hero h1 {
+    line-height: 1.5;
+}
+
+.btn-hero {
+    border-radius: 2px;
+    background: #5CB85F;
+    font-weight: 700;
+    color: white;
+}
+
+/* Features */
+
+.testimonial-card {
+    --bs-card-bg: #F1F3FF !important;
+}
+
+.check-icon {
+    background: url('https://res.cloudinary.com/dvncokkpe/image/upload/v1694182445/Group_53_glj7bi.png') no-repeat left top;
+    padding-left: 3rem;
+}
+
+/* Why Us */
+
+.card {
+    height: 100%;
+}
+
+.cta {
+    background-color: #0D28A6;
+    padding: 3rem;
+    /* padding-inline: 20rem; */
+}
+
+.cta-text {
+    font-weight: 100;
+    font-size: .8rem;
+}
+
+.brand-box {
+    width: 5rem;
+    height: 34px;
+    padding: 0;
+    margin: 0;
+    background-color: blue;
+}
+
+footer {
+    padding-block-end: 2rem;
+}
+
+.footer-links a {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 426px) {
+    p, li {
+        /* color: red; */
+        font-size: 0.8rem;
+    }
+
+    li {
+        padding-block: .3rem;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+        height: auto;
+    }
+
+    .testimonial-rating {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-start {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        padding-bottom: 3rem;
+    }
+
+    .img-container {
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hero h1 {
+        line-height: normal;
+    }
+    
+    nav {
+        margin-bottom: 3rem;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    nav {
+        margin-bottom: 7rem;
+    }
+    
+    .container {
+        padding-inline: 8rem;
+    }
+
+    .img-container {
+        width: 45%;
+    }
+}
