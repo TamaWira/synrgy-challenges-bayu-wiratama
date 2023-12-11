@@ -13,7 +13,69 @@ import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAlt";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 
+import { ICars } from "../CarTypes";
+
+import useAction from "../CarHooks";
+
 export default function CarList() {
+  const cars = useAction();
+
+  const renderCars = () => {
+    return cars?.map((car: ICars) => (
+      <Grid container xs={4} p={1}>
+        <Box width="100%" height="100%">
+          <Card variant="outlined" sx={{ height: "100%" }}>
+            <CardContent sx={{ height: "100%", position: "relative" }}>
+              <Box display="flex" justifyContent="center" my={2}>
+                <img src={car.image} alt="" width="100%" />
+              </Box>
+              <Typography>{car.model}</Typography>
+              <Typography my={1} sx={{ fontWeight: "bold" }} variant="h6">
+                Rp {car.rentPerDay} / hari
+              </Typography>
+              <Typography>{car.description}</Typography>
+              <Stack direction="row" mt={2}>
+                <PeopleAltOutlinedIcon />
+                <Typography ml={2}>{car.capacity} Orang</Typography>
+              </Stack>
+              <Stack direction="row" mt={2}>
+                <SettingsOutlinedIcon />
+                <Typography ml={2}>{car.transmission}</Typography>
+              </Stack>
+              <Stack direction="row" mt={2} mb={5}>
+                <DateRangeOutlinedIcon />
+                <Typography ml={2}>Tahun {car.year}</Typography>
+              </Stack>
+              <Box
+                mt={3}
+                sx={{
+                  position: "absolute",
+                  bottom: 10,
+                  left: 0,
+                  right: 0,
+                  width: "90%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "#5CB85F",
+                    borderRadius: 0,
+                    width: "100%",
+                  }}
+                >
+                  Pilih Mobil
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
+      </Grid>
+    ));
+  };
+
   return (
     <Container
       sx={{
@@ -21,150 +83,7 @@ export default function CarList() {
       }}
     >
       <Grid container spacing={2} mt={15}>
-        <Grid container xs={4} p={1}>
-          <Box width="100%">
-            <Card variant="outlined">
-              <CardContent>
-                <Box display="flex" justifyContent="center" my={2}>
-                  <img
-                    src="https://res.cloudinary.com/dvncokkpe/image/upload/v1698069423/BCR/image_1_zmamh2.png"
-                    alt=""
-                  />
-                </Box>
-                <Typography>Avanza</Typography>
-                <Typography my={1} sx={{ fontWeight: "bold" }} variant="h6">
-                  Rp 430.000 / hari
-                </Typography>
-                <Typography>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dolorum, accusantium iure itaque nam quidem dolor quasi
-                  consectetur maiores quibusdam magni adipisci optio. Eos
-                  corporis ipsum impedit nesciunt esse quibusdam est?
-                </Typography>
-                <Stack direction="row" mt={2}>
-                  <PeopleAltOutlinedIcon />
-                  <Typography ml={2}>4 Orang</Typography>
-                </Stack>
-                <Stack direction="row" mt={2}>
-                  <SettingsOutlinedIcon />
-                  <Typography ml={2}>Manual</Typography>
-                </Stack>
-                <Stack direction="row" mt={2}>
-                  <DateRangeOutlinedIcon />
-                  <Typography ml={2}>Tahun 2020</Typography>
-                </Stack>
-                <Box mt={3}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#5CB85F",
-                      borderRadius: 0,
-                      width: "100%",
-                    }}
-                  >
-                    Pilih Mobil
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Box>
-        </Grid>
-        <Grid container xs={4} p={1}>
-          <Box width="100%">
-            <Card variant="outlined">
-              <CardContent>
-                <Box display="flex" justifyContent="center" my={2}>
-                  <img
-                    src="https://res.cloudinary.com/dvncokkpe/image/upload/v1698069423/BCR/image_1_zmamh2.png"
-                    alt=""
-                  />
-                </Box>
-                <Typography>Avanza</Typography>
-                <Typography my={1} sx={{ fontWeight: "bold" }} variant="h6">
-                  Rp 430.000 / hari
-                </Typography>
-                <Typography>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dolorum, accusantium iure itaque nam quidem dolor quasi
-                  consectetur maiores quibusdam magni adipisci optio. Eos
-                  corporis ipsum impedit nesciunt esse quibusdam est?
-                </Typography>
-                <Stack direction="row" mt={2}>
-                  <PeopleAltOutlinedIcon />
-                  <Typography ml={2}>4 Orang</Typography>
-                </Stack>
-                <Stack direction="row" mt={2}>
-                  <SettingsOutlinedIcon />
-                  <Typography ml={2}>Manual</Typography>
-                </Stack>
-                <Stack direction="row" mt={2}>
-                  <DateRangeOutlinedIcon />
-                  <Typography ml={2}>Tahun 2020</Typography>
-                </Stack>
-                <Box mt={3}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#5CB85F",
-                      borderRadius: 0,
-                      width: "100%",
-                    }}
-                  >
-                    Pilih Mobil
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Box>
-        </Grid>
-        <Grid container xs={4} p={1}>
-          <Box width="100%">
-            <Card variant="outlined">
-              <CardContent>
-                <Box display="flex" justifyContent="center" my={2}>
-                  <img
-                    src="https://res.cloudinary.com/dvncokkpe/image/upload/v1698069423/BCR/image_1_zmamh2.png"
-                    alt=""
-                  />
-                </Box>
-                <Typography>Avanza</Typography>
-                <Typography my={1} sx={{ fontWeight: "bold" }} variant="h6">
-                  Rp 430.000 / hari
-                </Typography>
-                <Typography>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Dolorum, accusantium iure itaque nam quidem dolor quasi
-                  consectetur maiores quibusdam magni adipisci optio. Eos
-                  corporis ipsum impedit nesciunt esse quibusdam est?
-                </Typography>
-                <Stack direction="row" mt={2}>
-                  <PeopleAltOutlinedIcon />
-                  <Typography ml={2}>4 Orang</Typography>
-                </Stack>
-                <Stack direction="row" mt={2}>
-                  <SettingsOutlinedIcon />
-                  <Typography ml={2}>Manual</Typography>
-                </Stack>
-                <Stack direction="row" mt={2}>
-                  <DateRangeOutlinedIcon />
-                  <Typography ml={2}>Tahun 2020</Typography>
-                </Stack>
-                <Box mt={3}>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#5CB85F",
-                      borderRadius: 0,
-                      width: "100%",
-                    }}
-                  >
-                    Pilih Mobil
-                  </Button>
-                </Box>
-              </CardContent>
-            </Card>
-          </Box>
-        </Grid>
+        {renderCars()}
       </Grid>
     </Container>
   );

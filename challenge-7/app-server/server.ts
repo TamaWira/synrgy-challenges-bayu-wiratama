@@ -1,8 +1,10 @@
-import express, { Express } from "express";
 import cors from "cors";
+import path from "path";
+import express, { Express } from "express";
 import apiRouter from "./routes/api";
 
 const { PORT = 8000 } = process.env;
+const PUBLIC_DIR = path.join(__dirname, "public");
 
 class Server {
   private app: Express;
@@ -11,6 +13,7 @@ class Server {
     this.app = express();
 
     this.app.use(express.json());
+    this.app.use(express.static(PUBLIC_DIR));
     this.app.use(
       cors({
         origin: "http://localhost:5173",
